@@ -38,14 +38,16 @@
       </div>
       <div class="col-sm-6">
         <a href="{{route('admin.article.create')}}" class="btn btn-block btn-default">Создать материал</a>
-        @foreach ($articles as $article)
+        @forelse ($articles as $article)
           <a href="{{route('admin.article.edit', $article)}}" class="list-group-item">
             <h4 class="list-group-item-heading">{{$article->title}}</h4>
             <p class="list-group-item-text">
               {{$article->categories()->pluck('title')->implode(', ')}}
             </p>
           </a>
-        @endforeach
+        @empty
+          <h2 class="text-center">Пусто</h2>
+        @endforelse
       </div>
     </div>
   </div>

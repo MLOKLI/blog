@@ -10,7 +10,7 @@
   </li>
   @else
   <li>
-    <a href="{{url("/blog/сategory/$category->slug")}}">{{$category->title}}</a>
+    <a href="{{url("/blog/category/$category->slug")}}">{{$category->title}}</a>
   </li>
   @endif
 @endforeach
